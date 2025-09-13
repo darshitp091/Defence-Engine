@@ -9,7 +9,7 @@ import threading
 # Add current directory to path for imports
 sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 
-from core.quantum_hash import QuantumHashEngine
+from core.optimized_quantum_hash import OptimizedQuantumHashEngine as QuantumHashEngine
 from ai.threat_detector import AIThreatDetector
 from defense.reverse_attack import ReverseAttackSystem
 from license.license_manager import LicenseManager
