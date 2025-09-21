@@ -15,7 +15,7 @@
 - **GPU acceleration** support (CUDA/OpenCL)
 
 ### 🔬 Quantum-Inspired Security
-- **Multi-algorithm hashing** (SHA-256, SHA-512, BLAKE2b, SHA3)
+- **Multi-algorithm hashing** (SHA-512, BLAKE2b, SHA3) - Upgraded from SHA-256 for enhanced security
 - **8-layer obfuscation** system
 - **Pattern rotation** every 1000 hashes
 - **Binary and encrypted** hash variants

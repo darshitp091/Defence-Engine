@@ -43,7 +43,7 @@ class BlockchainLicenseValidator:
         
         # Calculate hash
         block_string = json.dumps(block, sort_keys=True)
-        block_hash = hashlib.sha256(block_string.encode()).hexdigest()
+        block_hash = hashlib.sha512(block_string.encode()).hexdigest()
         block['hash'] = block_hash
         
         # Add to chain
@@ -66,7 +66,7 @@ class BlockchainLicenseValidator:
         block_hash = block_copy.pop('hash')
         
         block_string = json.dumps(block_copy, sort_keys=True)
-        calculated_hash = hashlib.sha256(block_string.encode()).hexdigest()
+        calculated_hash = hashlib.sha512(block_string.encode()).hexdigest()
         
         return block_hash == calculated_hash
 
@@ -152,7 +152,7 @@ class CryptographicLicenseManager:
     def _fallback_signature(self, license_data: Dict) -> str:
         """Fallback signature method"""
         license_string = json.dumps(license_data, sort_keys=True)
-        signature = hashlib.sha256(license_string.encode() + self.master_key).hexdigest()
+        signature = hashlib.sha512(license_string.encode() + self.master_key).hexdigest()
         return base64.b64encode(signature.encode()).decode()
     
     def _fallback_verification(self, license_data: Dict, signature: str) -> bool:
@@ -220,7 +220,7 @@ class LicenseManager:
             # Generate unique license key
             timestamp = str(int(time.time()))
             random_data = secrets.token_hex(16)
-            user_hash = hashlib.sha256(user_id.encode()).hexdigest()[:8]
+            user_hash = hashlib.sha512(user_id.encode()).hexdigest()[:8]
             
             license_key = f"DEF-{user_hash}-{random_data[:8]}-{random_data[8:16]}"
             

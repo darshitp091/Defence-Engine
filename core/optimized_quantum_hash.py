@@ -184,7 +184,7 @@ class OptimizedQuantumHashEngine:
     def _apply_quantum_transformations(self, base_hash: str, data: str) -> str:
         """Apply quantum-inspired transformations"""
         # Multi-layer obfuscation
-        layer1 = hashlib.sha256((base_hash + data).encode()).hexdigest()
+        layer1 = hashlib.sha512((base_hash + data).encode()).hexdigest()
         layer2 = hashlib.sha3_256((layer1 + str(time.time())).encode()).hexdigest()
         layer3 = hashlib.blake2b((layer2 + base_hash).encode()).hexdigest()
         

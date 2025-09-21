@@ -89,7 +89,7 @@ class HashAnalyzer:
         algorithm_map = {
             32: "MD5",
             40: "SHA-1",
-            64: "SHA-256",
+            64: "SHA-256 (Upgraded to SHA-512)",
             96: "SHA-384",
             128: "SHA-512",
             43: "Base64 encoded",
@@ -182,7 +182,7 @@ class HashCracker:
                 return candidate
             if hashlib.sha1(candidate.encode()).hexdigest() == target_hash:
                 return candidate
-            if hashlib.sha256(candidate.encode()).hexdigest() == target_hash:
+            if hashlib.sha512(candidate.encode()).hexdigest() == target_hash:
                 return candidate
         
         return None
@@ -211,7 +211,7 @@ class HashCracker:
                 elapsed = time.time() - start_time
                 print(f"🎯 HASH CRACKED: {word} (Time: {elapsed:.2f}s)")
                 return word
-            if hashlib.sha256(word.encode()).hexdigest() == target_hash:
+            if hashlib.sha512(word.encode()).hexdigest() == target_hash:
                 elapsed = time.time() - start_time
                 print(f"🎯 HASH CRACKED: {word} (Time: {elapsed:.2f}s)")
                 return word

@@ -91,11 +91,11 @@ class VectorizedHasher:
         # Generate multiple hashes simultaneously
         md5_hash = hashlib.md5(data_bytes).hexdigest()
         sha1_hash = hashlib.sha1(data_bytes).hexdigest()
-        sha256_hash = hashlib.sha256(data_bytes).hexdigest()
+        sha512_hash = hashlib.sha512(data_bytes).hexdigest()
         
         # Combine hashes for uniqueness
-        combined = f"{md5_hash}{sha1_hash}{sha256_hash}"
-        return hashlib.sha256(combined.encode()).hexdigest()
+        combined = f"{md5_hash}{sha1_hash}{sha512_hash}"
+        return hashlib.sha512(combined.encode()).hexdigest()
 
 class LockFreeHashQueue:
     """Lock-free hash generation queue"""
@@ -230,12 +230,12 @@ class GPUAccelerator:
         hashes = []
         for i in range(4):  # Generate 4 hashes in parallel
             modified_data = data_bytes + str(i).encode()
-            hash_result = hashlib.sha256(modified_data).hexdigest()
+            hash_result = hashlib.sha512(modified_data).hexdigest()
             hashes.append(hash_result)
         
         # Combine hashes
         combined = ''.join(hashes)
-        return hashlib.sha256(combined.encode()).hexdigest()
+        return hashlib.sha512(combined.encode()).hexdigest()
 
 class UltraFastHashEngine:
     """Ultra-Fast Hash Engine with 2000x optimization"""
@@ -276,11 +276,11 @@ class UltraFastHashEngine:
         # Generate multiple hashes in parallel
         hash1 = hashlib.md5(data_bytes).hexdigest()
         hash2 = hashlib.sha1(data_bytes).hexdigest()
-        hash3 = hashlib.sha256(data_bytes).hexdigest()
+        hash3 = hashlib.sha512(data_bytes).hexdigest()
         
         # Combine for uniqueness
         combined = f"{hash1}{hash2}{hash3}"
-        result = hashlib.sha256(combined.encode()).hexdigest()
+        result = hashlib.sha512(combined.encode()).hexdigest()
         
         self.hash_count += 1
         return result

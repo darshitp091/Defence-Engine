@@ -10,7 +10,7 @@ The Defence Engine has been transformed into a **MIRACLE-LEVEL** security system
 
 ### **Revolutionary Features:**
 - **Post-Quantum Algorithms**: CRYSTALS-Kyber, CRYSTALS-Dilithium, SPHINCS+, Rainbow signatures
-- **Multi-Algorithm Hashing**: SHA-3, BLAKE2b, SHA-256, SHA-512 with quantum resistance
+- **Multi-Algorithm Hashing**: SHA-3, BLAKE2b, SHA-512 with quantum resistance (Upgraded from SHA-256)
 - **8-Layer Obfuscation**: Advanced pattern scrambling and encryption
 - **GPU Acceleration**: CUDA/OpenCL support for 40M+ hashes/minute
 - **Real-time Pattern Rotation**: Dynamic security updates every 1000 hashes

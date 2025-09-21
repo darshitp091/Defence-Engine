@@ -9,7 +9,7 @@
 - **Hash Traps**: Creates infinite loops to confuse attackers
 
 **Technical Implementation:**
-- Uses multiple hash algorithms (SHA-256, SHA-512, BLAKE2b, SHA3-256)
+- Uses multiple hash algorithms (SHA-512, BLAKE2b, SHA3-256) - Upgraded from SHA-256
 - XOR encryption with dynamic keys
 - Character substitution and position scrambling
 - Base64 encoding for final protection layer
@@ -133,7 +133,7 @@
 ## Security Compliance
 
 ### Cryptographic Standards
-- Uses industry-standard algorithms (SHA-256, SHA-512, etc.)
+- Uses industry-standard algorithms (SHA-512, etc.) - Enhanced security with SHA-512 upgrade
 - Secure random number generation
 - Proper key management practices
 - Regular security pattern updates

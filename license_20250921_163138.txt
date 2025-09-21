@@ -1,0 +1,10 @@
+Defence Engine License
+=====================
+License Key: DEF-9b4a2a1d-9b87ada7-492a85bd
+User ID: defence_user
+Generated: 2025-09-21 16:31:38
+Expiry: 365 days
+Max Usage: Unlimited
+
+To use this license:
+python defence_engine.py --mode service --license-key DEF-9b4a2a1d-9b87ada7-492a85bd
